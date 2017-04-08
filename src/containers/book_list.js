@@ -18,3 +18,11 @@ class BookList extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    books: state.books
+  };
+}
+
+export default connect(mapStateToProps)(BookList);
