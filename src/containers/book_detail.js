@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class BookDetail extends Component {
   render() {
-    // since at first app startup we set state to null, this.props.book will be null so can't call title on it
+    // since at first app startup we set state to null, this.props.book will be null so can't call title on it. need conditional rendering
 
     // so, if book prop not yet defined by user action, return early telling user to select a book
     if (!this.props.book) {
@@ -15,7 +15,10 @@ class BookDetail extends Component {
       <div>
         <h3>Details For:</h3>
         <div>
-          {this.props.book.title}
+          Title: {this.props.book.title}
+        </div>
+        <div>
+          Pages: {this.props.book.pages}
         </div>
       </div>
     );
